@@ -1,0 +1,109 @@
+@use 'variables'
+@use 'mixins'
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: none
+
+body
+    font-family: 'Josefin Sans', sans-serif
+    background: variables.$color-third
+
+    a
+        color: white
+        text-decoration: none
+        transition: 3s
+
+    ul
+        list-style: none
+
+    
+        
+.header 
+    @include mixins.container
+    @include mixins.flex-center
+    background: variables.$color-second
+    width: 100%
+    height: 100px
+    justify-content: space-around
+    align-items: flex-end
+    
+
+    .header-menu
+        @include mixins.flex-center
+        color: white
+        margin-bottom: 0px
+        ul
+            @include mixins.flex-center
+            
+            li
+                color: variables.$text-color-primary
+                padding: 5px
+                &:last-child
+                    padding-left: 10px
+                
+    .logo
+        display: flex
+        align-items: flex-end
+        font-size: 1.6rem
+        color: variables.$text-color-primary
+
+        img
+            
+            height: 75px
+            width: 75px
+            padding:5px
+
+    .social-media
+        
+        .icons
+            color: white
+            font-size: 18px
+            cursor: pointer
+
+            i
+                font-size: 20px
+
+.container
+    height: 100vh
+    background: variables.$color-primary
+    color: variables.$text-color-primary
+
+    h2 
+        display: flex
+        justify-content: center
+        padding-top: 15px
+        color: white
+    .artigos
+        @include mixins.flex-center
+        align-items: stretch
+
+        .card
+            margin-top: 25px
+            margin-left: 10px
+
+            .card-img-top
+
+                img
+                height: 50%
+
+@media screen and (max-width: 700px ) 
+
+    .container
+        height: 100%
+        
+        .artigos
+            display: flex
+            justify-content: center
+            flex-direction: column
+            margin-left: 20%
+        
+            .card
+                justify-content: center
+                
+
+
+        
+    
+                
